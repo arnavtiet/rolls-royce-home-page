@@ -17,13 +17,17 @@ const cursorSmall = document.querySelector(".small");
 function changecss() {
   var navElement = document.querySelector("nav");
   var scrollElement = document.querySelector(".top-scroll");
-  this.scrollY < 200
-    ? (navElement.style.background = "none")
-    : (navElement.style.background =
-        "linear-gradient(90deg, rgba(148,147,158,1) 0%, rgba(101,100,100,1) 38%)");
-  // this.scrollY < 500
-  //   ? (scrollElement.style.display = "flex")
-  //   : (scrollElement.style.display = "none");
+  var initElement = document.querySelector(".top");
+  this.scrollY < 350
+    ? (navElement.style.backdropFilter = "blur(50px)")
+    : (navElement.style.backdropFilter = "none");
+  this.scrollY < 350
+    ? (scrollElement.style.display = "none")
+    : (scrollElement.style.display = "flex");
+
+  this.scrollY < 350
+    ? (initElement.style.display = "flex")
+    : (initElement.style.display = "none");
 }
 
 window.addEventListener("scroll", changecss, false);
